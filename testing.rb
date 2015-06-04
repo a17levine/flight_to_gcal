@@ -8,9 +8,6 @@ Dotenv.load
 FlightStats.app_id = ENV['FLIGHTSTATS_APP_ID']
 FlightStats.app_key = ENV['FLIGHTSTATS_APP_KEY']
 
-# long_description = ''
-
-
 def airport_code_to_city_name(airport_code)
 	begin
 		@all_airports.find { |a| a['code'] == airport_code.to_s.upcase }['city']
@@ -36,17 +33,15 @@ def flight_to_gcal(carrier_code, flight_number, departure_year, departure_month,
 		arrival_time_for_url = flight.arrival_date.date_utc.split(".").first.gsub('-','').gsub(':','')+'Z'
 		long_description = URI.escape("For status updates: https://www.google.com?#q=#{URI.escape(carrier_code.to_s + ' ' + flight_number.to_s)}")
 		url = "https://www.google.com/calendar/render?action=TEMPLATE&text=#{URI.escape(name_of_event)}&dates=#{departure_time_for_url}/#{arrival_time_for_url}&details=#{long_description}&location=#{URI.escape(airport_code_to_address(flight.departure_airport_fs_code))}&trp=false"
-		puts flight.inspect
 		return url
 	rescue
 		return 'Flight not found'
 	end
-  
 end
 
 
 
-puts flight_to_gcal('DL', 662, 2015, 6, 4)
+puts flight_to_gcal('KL', 662, 2015, 6, 3)
 
 
 
