@@ -16,6 +16,11 @@
 		<input type="date" id="departure-date" name="departure-date">
 		<input id="submit" type="submit" value="Submit">
 	</form>
+
+	<div id="link-box">
+
+	</div>
+
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$("#submit").click(function(){
@@ -32,6 +37,7 @@
 				  success: function(data){
 				  	console.log('success!');
 				  	console.log(data);
+				  	$('#link-box').append("<a href='" + data.gcalUrl + "' target='_blank'>Link!</a>");
 				  },
 				  dataType: 'json'
 				});
