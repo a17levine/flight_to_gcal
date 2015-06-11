@@ -1,0 +1,55 @@
+.title {
+  margin: 120px 0px 0px 120px;
+  opacity: 0.87;
+  font-family: "Helvetica";
+}
+
+.results-container {
+  margin: 0px 0px 0px 120px;
+  width: 500px;
+  padding: 10px;
+}
+
+.result {
+  background-color: rgba(120, 231, 120, 0.87);
+  border: 10px solid rgba(120, 231, 120, 0.87);
+  overflow: auto;
+}
+
+.result-date {
+  display: inline-block;
+  margin-left: 9px;
+  font-size: 1.2em;
+}
+
+.result-name-container {
+  display: inline-block;
+  float: left;
+  line-height: 98px;
+  margin-left: 20px;
+}
+
+.result p.time {
+  opacity: 0.45;
+  font-size: 0.7em;
+  text-align: center;
+}
+
+.result-time-container {
+  width: 80px;
+  margin-right: 0px;
+  display: inline-block;
+  float: left;
+  padding: 7px;
+  background: rgba(255, 179, 251, 0.87);
+}
+
+.result p {
+  opacity: 0.87;
+  font-family: "Helvetica";
+}
+
+.result span {
+  opacity: 0.87;
+  font-family: "Helvetica";
+}

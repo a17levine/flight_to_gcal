@@ -1,0 +1,11 @@
+GEM
+  specs:
+    dotenv (2.0.1)
+    flightstats-flex (0.4.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  dotenv
+  flightstats-flex
