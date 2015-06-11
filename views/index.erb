@@ -1,0 +1,48 @@
+<html>
+<head>
+	<title>Flight to Google Calendar</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+	<h1>Add your flight to google calendar</h1>
+	<form action="get_link" method="post">
+		Airline Code:<br>
+		<input type="text" name="airline-code" id="airline-code" placeholder="AA">
+		<br>
+		Flight number:<br>
+		<input type="text" name="flight-number" id="flight-number" placeholder="345">
+		<br><br>
+		Departure Date: <br>
+		<input type="date" id="departure-date" name="departure-date">
+		<input id="submit" type="submit" value="Submit">
+	</form>
+
+	<div id="link-box">
+
+	</div>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#submit").click(function(){
+				event.preventDefault();
+				console.log('Clicked!');
+				$.ajax({
+				  type: "POST",
+				  url: '/get_flight',
+				  data: {
+				  	airlineCode: $("#airline-code").val(),
+				  	flightNumber: $("#flight-number").val(),
+				  	departureDate: $("#departure-date").val()
+				  },
+				  success: function(data){
+				  	console.log('success!');
+				  	console.log(data);
+				  	$('#link-box').append("<a href='" + data.gcalUrl + "' target='_blank'>Link!</a>");
+				  },
+				  dataType: 'json'
+				});
+			})
+		})
+	</script>
+</body>
+</html>

@@ -40,8 +40,7 @@ def flight_to_gcal(carrier_code, flight_number, departure_year, departure_month,
 end
 
 
-
-# puts flight_to_gcal('KL', 662, 2015, 6, 3)
+# puts flight_to_gcal('AA', 456, 2015, 6, 7)
 
 
 
